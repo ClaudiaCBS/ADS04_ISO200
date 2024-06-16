@@ -6,6 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { ReservaSalaModule } from './reserva_sala/reserva_sala.module';
 import { ImagemModule } from './imagem/imagem.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -19,7 +20,7 @@ import { ImagemModule } from './imagem/imagem.module';
     database: process.env.DB_DATABASE,
     entities: [__dirname+'/**/*.entity{.ts,.js}'],
     synchronize: true,
-  }), UsuarioModule, ReservaSalaModule, ImagemModule],
+  }), UsuarioModule, ReservaSalaModule, ImagemModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })

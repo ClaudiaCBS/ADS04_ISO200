@@ -8,6 +8,9 @@ export class UsuarioEntity {
     @Column()
     nome: String
 
+    @Column({unique: true})
+    email: String
+
     @Column()
     senha: String
 }

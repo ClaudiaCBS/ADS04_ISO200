@@ -6,9 +6,9 @@ export class CreateReservaSalaDto {
 
     dataUso: Date
 
-    horaInicio: Date
+    horaInicio: String
 
-    horaFinal: Date
+    horaFinal: String
 
     nomeResponsavel: String
 
@@ -16,5 +16,5 @@ export class CreateReservaSalaDto {
 
     informacaoGeral: String
 
-    convidados: String
+    convidados: any
 }

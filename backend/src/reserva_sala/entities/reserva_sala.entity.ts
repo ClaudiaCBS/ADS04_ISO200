@@ -13,14 +13,14 @@ export class ReservaSalaEntity {
     @Column()
     localSala: String
 
-    @Column()
+    @Column({type : `datetime`})
     dataUso: Date
 
     @Column()
-    horaInicio: Date
+    horaInicio: String
 
     @Column()
-    horaFinal: Date
+    horaFinal: String
 
     @Column()
     nomeResponsavel: String
@@ -31,8 +31,8 @@ export class ReservaSalaEntity {
     @Column()
     informacaoGeral: String
 
-    @Column()
-    convidados: String
+    @Column({type: 'json'})
+    convidados: JSON
 
     @OneToMany(()=> ImagemEntity, (imagem)=> imagem.idSala)
     imagens: ImagemEntity[]

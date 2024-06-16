@@ -1,16 +1,18 @@
-import { useState } from 'react'
-import './App.css'
-import { BrowserRouter as Router } from 'react-router-dom'
-import { Rotas } from './routes/routes'
+import "./App.css";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Rotas } from "./routes/routes";
+import NavBar from "./components/navbar";
+import { AuthProvider } from "./context/auth";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <Router> 
-      <Rotas></Rotas>
-    </Router>
-  )
+    <AuthProvider>
+      <Router>
+        <NavBar />
+        <Rotas></Rotas>
+      </Router>
+    </AuthProvider>
+  );
 }
 
-export default App
+export default App;

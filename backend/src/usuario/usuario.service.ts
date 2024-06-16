@@ -11,7 +11,15 @@ export class UsuarioService {
     readonly usuarioRepository : Repository<UsuarioEntity>
   ){}
   async create(createUsuarioDto: CreateUsuarioDto) {
-    return await this.usuarioRepository.save(createUsuarioDto);
+    try {
+      const user = await this.usuarioRepository.findOneBy({email: createUsuarioDto.email})
+      if(user){
+        throw new Error("Usuário já existe")
+      }
+      return await this.usuarioRepository.save(createUsuarioDto);
+    } catch (error) {
+      throw new Error(error.message)
+    }
   }
 
   async findAll() {
@@ -31,5 +39,9 @@ export class UsuarioService {
 
   async remove(id: number) {
     return await this.usuarioRepository.delete(id);
+  }
+
+  async findOneByEmail(email : string) {
+    return await this.usuarioRepository.findOneBy({email : email})
   }
 }

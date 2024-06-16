@@ -1,17 +1,21 @@
-import React from "react"
+import React from "react";
 
 interface TextFieldProps {
-    nome: string
-    valor : string
-    setValor : Function
+  nome: string;
+  valor: string;
+  setValor: Function;
 }
 
-export function TextField(props : TextFieldProps){
-    return(
-    <div className="flex space-x-3">
-        <label>{props.nome}</label>
-        <input className="bordaInput items-center w-72 h-auto p-1 rounded-md border-2"
-            type="text" value={props.valor} onChange={(e) => props.setValor(e.target.value)} />
+export function TextField(props: TextFieldProps) {
+  return (
+    <div className="flex flex-col items-start">
+      <label>{props.nome}</label>
+      <input
+        className="w-full h-10 bg-white border border-white rounded-lg mt-1"
+        type="text"
+        value={props.valor}
+        onChange={(e) => props.setValor(e.target.value)}
+      />
     </div>
-    )
+  );
 }
