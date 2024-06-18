@@ -1,5 +1,3 @@
-import React from "react";
-
 interface SelectionBoxProps {
   nome: string;
   lista: Array<any>;

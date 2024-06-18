@@ -1,5 +1,3 @@
-import React from "react";
-
 interface TextFieldProps {
   nome: string;
   valor: string;

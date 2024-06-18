@@ -1,4 +1,3 @@
-import React from "react";
 interface PasswordFieldProps {
   nome: String;
   valor: string | number | readonly string[] | undefined;
